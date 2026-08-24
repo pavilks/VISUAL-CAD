@@ -8,7 +8,6 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <!-- Google Model Viewer Script for interactive 3D models -->
     <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.4.0/model-viewer.min.js"></script>
 </head>
 <body>
@@ -18,6 +17,7 @@
         <div class="container nav-container">
             <a href="#" class="logo">ADV<span>ENGINEERING</span></a>
             <ul class="nav-links">
+                <li><a href="#catalog">Catalog</a></li>
                 <li><a href="#services">Services</a></li>
                 <li><a href="#value">Value</a></li>
                 <li><a href="#contact" class="nav-btn">Start Project</a></li>
@@ -32,94 +32,34 @@
                 <span class="badge">Baltic Region Supervision & Engineering</span>
                 <h1>Flawless Visual Advertising:<br><span>From Blueprint to Installation</span></h1>
                 <p>Engineering design and strictly controlled manufacturing oversight across the Baltic region (Latvia, Lithuania, Estonia). We represent your interests on-site with top-tier local producers.</p>
-                
-                <!-- KАТALOGS TAGAD ATRODAS ŠEIT: Pirms pogām "Submit a Project" -->
-                <div id="catalog" class="inline-catalog-wrapper" style="margin: 30px 0;">
-                    <div style="font-size: 0.85rem; color: var(--accent); font-weight: 600; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 12px;">Interactive Catalog & 3D Specs</div>
-                    
-                    <div class="catalog-carousel-wrapper" style="max-width: 100%;">
-                        <button class="carousel-btn prev-btn" onclick="moveCatalog(-1)">&#10094;</button>
-                        <div class="catalog-track-container">
-                            <div class="catalog-track" id="catalogTrack">
-                                
-                                <!-- Kataloga vienība 1 -->
-                                <div class="catalog-card" onclick="openModal('LED Acrylic Letters', 'Full-face illuminated 3D letters with aluminum returns.', 'https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=600&q=80', 'Details: 3mm opal acrylic face, 1mm welded aluminum sides with powder coating, waterproof Samsung LED modules inside, CNC-routed PVC backplate for secure wall mounting.')">
-                                    <div class="catalog-img-box">
-                                        <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=600&q=80" alt="3D Letters">
-                                    </div>
-                                    <h3>LED Acrylic Letters</h3>
-                                    <p>Halo & Front illuminated</p>
-                                </div>
-
-                                <!-- Kataloga vienība 2 -->
-                                <div class="catalog-card" onclick="openModal('Pylon & Totem Signage', 'Heavy-duty architectural pylons for corporate headquarters.', 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=600&q=80', 'Details: Internal structural steel frame wind-calculated for Baltic climate, galvanized steel sheet cladding, integrated LED illumination boxes, concrete foundation anchoring specs included.')">
-                                    <div class="catalog-img-box">
-                                        <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=600&q=80" alt="Pylon">
-                                    </div>
-                                    <h3>Architectural Pylons</h3>
-                                    <p>Standalone outdoor towers</p>
-                                </div>
-
-                                <!-- Kataloga vienība 3 -->
-                                <div class="catalog-card" onclick="openModal('Facade Light Boxes', 'Slim profile outdoor light boxes with seamless fabric tension.', 'https://images.unsplash.com/photo-1541888946425-d0fbb18f86f6?auto=format&fit=crop&w=600&q=80', 'Details: Anodized aluminum snap frames, back-lit LED curtains with optical lenses, high-durability UV-printed backlits textiles for easy seasonal visual replacement.')">
-                                    <div class="catalog-img-box">
-                                        <img src="https://images.unsplash.com/photo-1541888946425-d0fbb18f86f6?auto=format&fit=crop&w=600&q=80" alt="Light Box">
-                                    </div>
-                                    <h3>Facade Light Boxes</h3>
-                                    <p>Textile & Acrylic systems</p>
-                                </div>
-
-                                <!-- Kataloga vienība 4 -->
-                                <div class="catalog-card" onclick="openModal('Retail Branding & Displays', 'Indoor premium shop-in-shop illuminated elements.', 'https://images.unsplash.com/photo-1555529771-835f59fc5efe?auto=format&fit=crop&w=600&q=80', 'Details: Brushed brass stainless steel combined with frosted acrylic, integrated warm LED strips, concealed hidden mounting hardware.')">
-                                    <div class="catalog-img-box">
-                                        <img src="https://images.unsplash.com/photo-1555529771-835f59fc5efe?auto=format&fit=crop&w=600&q=80" alt="Retail Branding">
-                                    </div>
-                                    <h3>Retail Branding</h3>
-                                    <p>Indoor illuminated displays</p>
-                                </div>
-
-                            </div>
-                        </div>
-                        <button class="carousel-btn next-btn" onclick="moveCatalog(1)">&#10095;</button>
-                    </div>
-                </div>
-
-                <!-- Pogas tagad atrodas ZEM kataloga karuseļa -->
                 <div class="hero-actions">
                     <a href="#contact" class="btn btn-primary">Submit a Project</a>
-                    <a href="#services" class="btn btn-secondary">Explore Services</a>
+                    <a href="#catalog" class="btn btn-secondary">Explore Catalog</a>
                 </div>
             </div>
 
-            <!-- INTERACTIVE 3D CAROUSEL SECTION (Labajā pusē) -->
+            <!-- 3D Viewer Carousel -->
             <div class="hero-3d-carousel">
                 <div class="carousel-container" id="carousel">
-                    <!-- 3D Model 1 -->
                     <div class="carousel-slide active">
                         <model-viewer src="https://modelviewer.dev/shared-assets/models/Astronaut.glb" 
-                                      alt="3D Signage Model 1" 
-                                      auto-rotate camera-controls shadow-intensity="1">
+                                      alt="3D Signage Model 1" auto-rotate camera-controls shadow-intensity="1">
                         </model-viewer>
                         <div class="model-caption">LED Facade Signage (3D)</div>
                     </div>
-                    <!-- 3D Model 2 -->
                     <div class="carousel-slide">
                         <model-viewer src="https://modelviewer.dev/shared-assets/models/RobotExpressive.glb" 
-                                      alt="3D Signage Model 2" 
-                                      auto-rotate camera-controls shadow-intensity="1">
+                                      alt="3D Signage Model 2" auto-rotate camera-controls shadow-intensity="1">
                         </model-viewer>
                         <div class="model-caption">Architectural Pylon Structure</div>
                     </div>
-                    <!-- 3D Model 3 -->
                     <div class="carousel-slide">
                         <model-viewer src="https://modelviewer.dev/shared-assets/models/NeilArmstrong.glb" 
-                                      alt="3D Signage Model 3" 
-                                      auto-rotate camera-controls shadow-intensity="1">
+                                      alt="3D Signage Model 3" auto-rotate camera-controls shadow-intensity="1">
                         </model-viewer>
                         <div class="model-caption">Illuminated 3D Letters</div>
                     </div>
                 </div>
-                <!-- Carousel Controls -->
                 <div class="carousel-dots">
                     <span class="dot active" onclick="currentSlide(0)"></span>
                     <span class="dot" onclick="currentSlide(1)"></span>
@@ -129,7 +69,61 @@
         </div>
     </header>
 
-    <!-- Modal / Detalizētais logs (Griezums un apraksts) -->
+    <!-- CATALOG SECTION (Atsevišķa sekcija uzreiz zem Hero) -->
+    <section id="catalog" class="catalog-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Visual Advertising Catalog</h2>
+                <p>Explore production types. Click any item to view technical details, internal profiles, and structural cross-sections.</p>
+            </div>
+
+            <div class="catalog-carousel-wrapper">
+                <button class="carousel-btn prev-btn" onclick="moveCatalog(-1)">&#10094;</button>
+                
+                <div class="catalog-track-container">
+                    <div class="catalog-track" id="catalogTrack">
+                        
+                        <div class="catalog-card" onclick="openModal('LED Acrylic Letters', 'Full-face illuminated 3D letters with aluminum returns.', 'https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=600&q=80', 'Details: 3mm opal acrylic face, 1mm welded aluminum sides with powder coating, waterproof Samsung LED modules inside, CNC-routed PVC backplate for secure wall mounting.')">
+                            <div class="catalog-img-box">
+                                <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=600&q=80" alt="3D Letters">
+                            </div>
+                            <h3>LED Acrylic Letters</h3>
+                            <p>Halo & Front illuminated</p>
+                        </div>
+
+                        <div class="catalog-card" onclick="openModal('Pylon & Totem Signage', 'Heavy-duty architectural pylons for corporate headquarters.', 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=600&q=80', 'Details: Internal structural steel frame wind-calculated for Baltic climate, galvanized steel sheet cladding, integrated LED illumination boxes, concrete foundation anchoring specs included.')">
+                            <div class="catalog-img-box">
+                                <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=600&q=80" alt="Pylon">
+                            </div>
+                            <h3>Architectural Pylons</h3>
+                            <p>Standalone outdoor towers</p>
+                        </div>
+
+                        <div class="catalog-card" onclick="openModal('Facade Light Boxes', 'Slim profile outdoor light boxes with seamless fabric tension.', 'https://images.unsplash.com/photo-1541888946425-d0fbb18f86f6?auto=format&fit=crop&w=600&q=80', 'Details: Anodized aluminum snap frames, back-lit LED curtains with optical lenses, high-durability UV-printed backlits textiles for easy seasonal visual replacement.')">
+                            <div class="catalog-img-box">
+                                <img src="https://images.unsplash.com/photo-1541888946425-d0fbb18f86f6?auto=format&fit=crop&w=600&q=80" alt="Light Box">
+                            </div>
+                            <h3>Facade Light Boxes</h3>
+                            <p>Textile & Acrylic systems</p>
+                        </div>
+
+                        <div class="catalog-card" onclick="openModal('Retail Branding & Displays', 'Indoor premium shop-in-shop illuminated elements.', 'https://images.unsplash.com/photo-1555529771-835f59fc5efe?auto=format&fit=crop&w=600&q=80', 'Details: Brushed brass stainless steel combined with frosted acrylic, integrated warm LED strips, concealed hidden mounting hardware.')">
+                            <div class="catalog-img-box">
+                                <img src="https://images.unsplash.com/photo-1555529771-835f59fc5efe?auto=format&fit=crop&w=600&q=80" alt="Retail Branding">
+                            </div>
+                            <h3>Retail Branding</h3>
+                            <p>Indoor illuminated displays</p>
+                        </div>
+
+                    </div>
+                </div>
+
+                <button class="carousel-btn next-btn" onclick="moveCatalog(1)">&#10095;</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal / Detalizētais logs -->
     <div id="catalogModal" class="modal">
         <div class="modal-content">
             <span class="close-modal" onclick="closeModal()">&times;</span>
@@ -150,7 +144,7 @@
         </div>
     </div>
 
-    <!-- Services -->
+    <!-- Services Section -->
     <section id="services" class="services">
         <div class="container">
             <div class="section-header">
@@ -201,7 +195,7 @@
         </div>
     </section>
 
-    <!-- Contact Form -->
+    <!-- Contact Section -->
     <section id="contact" class="contact">
         <div class="container">
             <div class="contact-box">
@@ -235,7 +229,6 @@
         </div>
     </footer>
 
-    <!-- External JavaScript File -->
     <script src="script.js"></script>
 </body>
 </html>
