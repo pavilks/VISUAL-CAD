@@ -96,9 +96,9 @@ body {
     color: var(--bg-main);
 }
 
-/* Hero */
+/* Hero Section */
 .hero {
-    padding: 60px 0 60px;
+    padding: 60px 0 80px;
     overflow: hidden;
 }
 
@@ -175,7 +175,7 @@ body {
     background: var(--border);
 }
 
-/* 3D Carousel Styles */
+/* 3D Viewer Carousel Styles */
 .hero-3d-carousel {
     width: 100%;
     max-width: 450px;
@@ -185,7 +185,7 @@ body {
 
 .carousel-container {
     width: 100%;
-    height: 400px; /* Nomainīts no aspect-ratio uz fiksētu augstumu, lai Chrome nesabrūk */
+    height: 400px;
     background: var(--bg-card);
     border: 1px solid var(--border);
     border-radius: var(--radius);
@@ -213,7 +213,6 @@ body {
     visibility: visible;
     z-index: 2;
 }
-
 
 model-viewer {
     width: 100%;
@@ -257,8 +256,218 @@ model-viewer {
     background: var(--accent);
 }
 
-/* Services */
-.services {
+/* Catalog Section Styles */
+.catalog-section {
+    padding: 80px 0;
+    background: #0e1420;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+}
+
+.catalog-carousel-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.catalog-track-container {
+    overflow: hidden;
+    width: 100%;
+    padding: 10px 0;
+}
+
+.catalog-track {
+    display: flex;
+    gap: 24px;
+    transition: transform 0.4s ease-in-out;
+}
+
+.catalog-card {
+    min-width: 260px;
+    flex: 0 0 260px;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 16px;
+    cursor: pointer;
+    transition: transform 0.2s, border-color 0.2s;
+}
+
+.catalog-card:hover {
+    transform: translateY(-6px);
+    border-color: var(--accent);
+}
+
+.catalog-img-box {
+    width: 100%;
+    height: 160px;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 16px;
+}
+
+.catalog-img-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s;
+}
+
+.catalog-card:hover .catalog-img-box img {
+    transform: scale(1.05);
+}
+
+.catalog-card h3 {
+    font-size: 1.1rem;
+    margin-bottom: 6px;
+}
+
+.catalog-card p {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+}
+
+.carousel-btn {
+    background: var(--bg-card);
+    color: var(--accent);
+    border: 1px solid var(--border);
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    font-size: 1.2rem;
+    cursor: pointer;
+    z-index: 10;
+    flex-shrink: 0;
+    transition: background 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.carousel-btn:hover {
+    background: var(--accent);
+    color: var(--bg-main);
+}
+
+.prev-btn { margin-right: 16px; }
+.next-btn { margin-left: 16px; }
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(11, 15, 23, 0.85);
+    backdrop-filter: blur(8px);
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.modal-content {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    max-width: 850px;
+    width: 100%;
+    padding: 32px;
+    position: relative;
+    box-shadow: 0 25px 50px rgba(0,0,0,0.6);
+    animation: modalFadeIn 0.3s ease;
+}
+
+@keyframes modalFadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.close-modal {
+    position: absolute;
+    top: 16px;
+    right: 20px;
+    font-size: 2rem;
+    color: var(--text-muted);
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.close-modal:hover {
+    color: #fff;
+}
+
+.modal-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    align-items: center;
+}
+
+.modal-img-area {
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    height: 300px;
+}
+
+.modal-img-area img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.modal-badge {
+    position: absolute;
+    bottom: 12px;
+    left: 12px;
+    background: rgba(11, 15, 23, 0.9);
+    color: var(--accent);
+    padding: 4px 12px;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    font-family: monospace;
+    border: 1px solid var(--border);
+}
+
+.modal-info-area h3 {
+    font-size: 1.5rem;
+    margin-bottom: 4px;
+}
+
+.modal-sub {
+    color: var(--accent);
+    font-size: 0.95rem;
+    margin-bottom: 16px;
+}
+
+.modal-divider {
+    border: none;
+    height: 1px;
+    background: var(--border);
+    margin: 16px 0;
+}
+
+.modal-info-area h4 {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--text-muted);
+    margin-bottom: 8px;
+}
+
+.modal-info-area p#modalDescription {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+}
+
+/* Services & Value Sections */
+.services, .value {
     padding: 80px 0;
     background: var(--bg-main);
 }
@@ -312,14 +521,6 @@ model-viewer {
     font-size: 0.95rem;
 }
 
-/* Value Section */
-.value {
-    padding: 80px 0;
-    background: #0e1420;
-    border-top: 1px solid var(--border);
-    border-bottom: 1px solid var(--border);
-}
-
 .value-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -343,7 +544,7 @@ model-viewer {
     font-size: 0.9rem;
 }
 
-/* Contact */
+/* Contact Section */
 .contact {
     padding: 80px 0;
 }
@@ -426,6 +627,14 @@ footer {
         margin: 0 auto;
     }
 
+    .modal-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .modal-img-area {
+        height: 200px;
+    }
+
     .contact-box {
         grid-template-columns: 1fr;
         padding: 24px;
@@ -459,5 +668,13 @@ footer {
         flex-direction: column;
         gap: 8px;
         text-align: center;
+    }
+
+    .carousel-btn {
+        display: none;
+    }
+
+    .catalog-track-container {
+        overflow-x: auto;
     }
 }
