@@ -185,7 +185,7 @@ body {
 
 .carousel-container {
     width: 100%;
-    aspect-ratio: 1;
+    height: 400px; /* Nomainīts no aspect-ratio uz fiksētu augstumu, lai Chrome nesabrūk */
     background: var(--bg-card);
     border: 1px solid var(--border);
     border-radius: var(--radius);
@@ -202,7 +202,8 @@ body {
     height: 100%;
     opacity: 0;
     visibility: hidden;
-    transition: opacity 0.5s ease-in-out, visibility 0.5s;
+    z-index: 1;
+    transition: opacity 0.4s ease-in-out;
     display: flex;
     flex-direction: column;
 }
@@ -210,7 +211,9 @@ body {
 .carousel-slide.active {
     opacity: 1;
     visibility: visible;
+    z-index: 2;
 }
+
 
 model-viewer {
     width: 100%;
