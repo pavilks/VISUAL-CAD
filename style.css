@@ -175,46 +175,83 @@ body {
     background: var(--border);
 }
 
-/* Blueprint graphic */
-.blueprint-box {
+/* 3D Carousel Styles */
+.hero-3d-carousel {
+    width: 100%;
+    max-width: 450px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.carousel-container {
     width: 100%;
     aspect-ratio: 1;
-    border: 1px solid var(--border);
     background: var(--bg-card);
+    border: 1px solid var(--border);
     border-radius: var(--radius);
     position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    overflow: hidden;
     box-shadow: 0 20px 40px rgba(0,0,0,0.5);
 }
 
-.cad-line {
+.carousel-slide {
     position: absolute;
-    background: rgba(0, 242, 254, 0.15);
-}
-
-.line-h { width: 100%; height: 1px; top: 50%; }
-.line-v { width: 1px; height: 100%; left: 50%; }
-
-.cad-badge {
-    position: absolute;
-    top: 16px;
-    left: 16px;
-    font-size: 0.75rem;
-    color: var(--accent);
-    font-family: monospace;
-    letter-spacing: 1px;
-}
-
-.cad-inner {
-    width: 60%;
-    height: 60%;
-}
-
-.cad-svg {
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ease-in-out, visibility 0.5s;
+    display: flex;
+    flex-direction: column;
+}
+
+.carousel-slide.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+model-viewer {
+    width: 100%;
+    height: 100%;
+    --poster-color: transparent;
+}
+
+.model-caption {
+    position: absolute;
+    bottom: 12px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(11, 15, 23, 0.85);
+    border: 1px solid var(--border);
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    color: var(--accent);
+    letter-spacing: 0.5px;
+    pointer-events: none;
+    white-space: nowrap;
+}
+
+.carousel-dots {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 16px;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    background: var(--border);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.dot.active {
+    background: var(--accent);
 }
 
 /* Services */
@@ -365,7 +402,7 @@ footer {
     justify-content: space-between;
 }
 
-/* MOBILĀS VERSIJAS PIELĀGOJUMI (RESPONSIVE FIXES) */
+/* RESPONSIVE DESIGN */
 @media (max-width: 900px) {
     .hero-grid {
         grid-template-columns: 1fr;
@@ -381,8 +418,8 @@ footer {
         justify-content: center;
     }
 
-    .blueprint-box {
-        max-width: 280px;
+    .hero-3d-carousel {
+        max-width: 320px;
         margin: 0 auto;
     }
 
@@ -403,7 +440,7 @@ footer {
     }
 
     .nav-links a:not(.nav-btn) {
-        display: none; /* Paslēpj parastās saites uz telefona ekrāna */
+        display: none;
     }
 
     .nav-links .nav-btn {
