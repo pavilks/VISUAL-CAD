@@ -32,13 +32,66 @@
                 <span class="badge">Baltic Region Supervision & Engineering</span>
                 <h1>Flawless Visual Advertising:<br><span>From Blueprint to Installation</span></h1>
                 <p>Engineering design and strictly controlled manufacturing oversight across the Baltic region (Latvia, Lithuania, Estonia). We represent your interests on-site with top-tier local producers.</p>
+                
+                <!-- KАТALOGS TAGAD ATRODAS ŠEIT: Pirms pogām "Submit a Project" -->
+                <div id="catalog" class="inline-catalog-wrapper" style="margin: 30px 0;">
+                    <div style="font-size: 0.85rem; color: var(--accent); font-weight: 600; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 12px;">Interactive Catalog & 3D Specs</div>
+                    
+                    <div class="catalog-carousel-wrapper" style="max-width: 100%;">
+                        <button class="carousel-btn prev-btn" onclick="moveCatalog(-1)">&#10094;</button>
+                        <div class="catalog-track-container">
+                            <div class="catalog-track" id="catalogTrack">
+                                
+                                <!-- Kataloga vienība 1 -->
+                                <div class="catalog-card" onclick="openModal('LED Acrylic Letters', 'Full-face illuminated 3D letters with aluminum returns.', 'https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=600&q=80', 'Details: 3mm opal acrylic face, 1mm welded aluminum sides with powder coating, waterproof Samsung LED modules inside, CNC-routed PVC backplate for secure wall mounting.')">
+                                    <div class="catalog-img-box">
+                                        <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=600&q=80" alt="3D Letters">
+                                    </div>
+                                    <h3>LED Acrylic Letters</h3>
+                                    <p>Halo & Front illuminated</p>
+                                </div>
+
+                                <!-- Kataloga vienība 2 -->
+                                <div class="catalog-card" onclick="openModal('Pylon & Totem Signage', 'Heavy-duty architectural pylons for corporate headquarters.', 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=600&q=80', 'Details: Internal structural steel frame wind-calculated for Baltic climate, galvanized steel sheet cladding, integrated LED illumination boxes, concrete foundation anchoring specs included.')">
+                                    <div class="catalog-img-box">
+                                        <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=600&q=80" alt="Pylon">
+                                    </div>
+                                    <h3>Architectural Pylons</h3>
+                                    <p>Standalone outdoor towers</p>
+                                </div>
+
+                                <!-- Kataloga vienība 3 -->
+                                <div class="catalog-card" onclick="openModal('Facade Light Boxes', 'Slim profile outdoor light boxes with seamless fabric tension.', 'https://images.unsplash.com/photo-1541888946425-d0fbb18f86f6?auto=format&fit=crop&w=600&q=80', 'Details: Anodized aluminum snap frames, back-lit LED curtains with optical lenses, high-durability UV-printed backlits textiles for easy seasonal visual replacement.')">
+                                    <div class="catalog-img-box">
+                                        <img src="https://images.unsplash.com/photo-1541888946425-d0fbb18f86f6?auto=format&fit=crop&w=600&q=80" alt="Light Box">
+                                    </div>
+                                    <h3>Facade Light Boxes</h3>
+                                    <p>Textile & Acrylic systems</p>
+                                </div>
+
+                                <!-- Kataloga vienība 4 -->
+                                <div class="catalog-card" onclick="openModal('Retail Branding & Displays', 'Indoor premium shop-in-shop illuminated elements.', 'https://images.unsplash.com/photo-1555529771-835f59fc5efe?auto=format&fit=crop&w=600&q=80', 'Details: Brushed brass stainless steel combined with frosted acrylic, integrated warm LED strips, concealed hidden mounting hardware.')">
+                                    <div class="catalog-img-box">
+                                        <img src="https://images.unsplash.com/photo-1555529771-835f59fc5efe?auto=format&fit=crop&w=600&q=80" alt="Retail Branding">
+                                    </div>
+                                    <h3>Retail Branding</h3>
+                                    <p>Indoor illuminated displays</p>
+                                </div>
+
+                            </div>
+                        </div>
+                        <button class="carousel-btn next-btn" onclick="moveCatalog(1)">&#10095;</button>
+                    </div>
+                </div>
+
+                <!-- Pogas tagad atrodas ZEM kataloga karuseļa -->
                 <div class="hero-actions">
                     <a href="#contact" class="btn btn-primary">Submit a Project</a>
                     <a href="#services" class="btn btn-secondary">Explore Services</a>
                 </div>
             </div>
 
-            <!-- INTERACTIVE 3D CAROUSEL SECTION -->
+            <!-- INTERACTIVE 3D CAROUSEL SECTION (Labajā pusē) -->
             <div class="hero-3d-carousel">
                 <div class="carousel-container" id="carousel">
                     <!-- 3D Model 1 -->
@@ -75,6 +128,27 @@
             </div>
         </div>
     </header>
+
+    <!-- Modal / Detalizētais logs (Griezums un apraksts) -->
+    <div id="catalogModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal()">&times;</span>
+            <div class="modal-grid">
+                <div class="modal-img-area">
+                    <img id="modalImg" src="" alt="Technical Section">
+                    <span class="modal-badge">Technical Cross-Section & Spec</span>
+                </div>
+                <div class="modal-info-area">
+                    <h3 id="modalTitle">Title</h3>
+                    <p id="modalSubtitle" class="modal-sub">Subtitle</p>
+                    <hr class="modal-divider">
+                    <h4>Engineering Specifications:</h4>
+                    <p id="modalDescription">Description text...</p>
+                    <a href="#contact" class="btn btn-primary" onclick="closeModal()" style="margin-top: 20px; display:inline-block;">Request Similar Project</a>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Services -->
     <section id="services" class="services">
