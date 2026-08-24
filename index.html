@@ -8,6 +8,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- Google Model Viewer Script for interactive 3D models -->
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.4.0/model-viewer.min.js"></script>
 </head>
 <body>
 
@@ -23,8 +25,7 @@
         </div>
     </nav>
 
-   
-<!-- Hero Section -->
+    <!-- Hero Section -->
     <header class="hero">
         <div class="container hero-grid">
             <div class="hero-text">
@@ -36,20 +37,40 @@
                     <a href="#services" class="btn btn-secondary">Explore Services</a>
                 </div>
             </div>
-                
-           
-            <div class="hero-blueprint">
-                <div class="blueprint-box">
-                    <div class="cad-line line-h"></div>
-                    <div class="cad-line line-v"></div>
-                    <div class="cad-badge">3D CAD / SPEC</div>
-                    <div class="cad-inner">
-                        <svg viewBox="0 0 100 100" class="cad-svg">
-                            <rect x="10" y="10" width="80" height="80" fill="none" stroke="#00f2fe" stroke-width="1.5" stroke-dasharray="4 2"/>
-                            <circle cx="50" cy="50" r="30" fill="none" stroke="#ffffff" stroke-width="2"/>
-                            <path d="M 20 50 L 80 50 M 50 20 L 50 80" stroke="#00f2fe" stroke-width="0.75"/>
-                        </svg>
+
+            <!-- INTERACTIVE 3D CAROUSEL SECTION -->
+            <div class="hero-3d-carousel">
+                <div class="carousel-container" id="carousel">
+                    <!-- 3D Model 1 -->
+                    <div class="carousel-slide active">
+                        <model-viewer src="https://modelviewer.dev/shared-assets/models/Astronaut.glb" 
+                                      alt="3D Signage Model 1" 
+                                      auto-rotate camera-controls shadow-intensity="1">
+                        </model-viewer>
+                        <div class="model-caption">LED Facade Signage (3D)</div>
                     </div>
+                    <!-- 3D Model 2 -->
+                    <div class="carousel-slide">
+                        <model-viewer src="https://modelviewer.dev/shared-assets/models/RobotExpressive.glb" 
+                                      alt="3D Signage Model 2" 
+                                      auto-rotate camera-controls shadow-intensity="1">
+                        </model-viewer>
+                        <div class="model-caption">Architectural Pylon Structure</div>
+                    </div>
+                    <!-- 3D Model 3 -->
+                    <div class="carousel-slide">
+                        <model-viewer src="https://modelviewer.dev/shared-assets/models/NeilArmstrong.glb" 
+                                      alt="3D Signage Model 3" 
+                                      auto-rotate camera-controls shadow-intensity="1">
+                        </model-viewer>
+                        <div class="model-caption">Illuminated 3D Letters</div>
+                    </div>
+                </div>
+                <!-- Carousel Controls -->
+                <div class="carousel-dots">
+                    <span class="dot active" onclick="currentSlide(0)"></span>
+                    <span class="dot" onclick="currentSlide(1)"></span>
+                    <span class="dot" onclick="currentSlide(2)"></span>
                 </div>
             </div>
         </div>
@@ -73,15 +94,11 @@
                     <h3>Manufacturer Selection</h3>
                     <p>Matching your specs with vetted producers based on technical capacity, factory load, tight timelines, and realistic pricing.</p>
                 </div>
-             
-<div class="card">
+                <div class="card">
                     <div class="card-icon">🔍</div>
                     <h3>Baltic Production Supervision</h3>
                     <p>On-site quality control directly in Baltic factories. We conduct physical inspections, material verifications, and structural sign-offs before shipping or installation.</p>
                 </div>
-
-
-                
             </div>
         </div>
     </section>
@@ -144,5 +161,7 @@
         </div>
     </footer>
 
+    <!-- External JavaScript File -->
+    <script src="script.js"></script>
 </body>
 </html>
